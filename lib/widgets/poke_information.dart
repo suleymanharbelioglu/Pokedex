@@ -7,7 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class PokeInformation extends StatelessWidget {
   final PokeModel pokemon;
 
-  const PokeInformation({Key? key, required this.pokemon}) : super(key: key);
+  const PokeInformation({super.key, required this.pokemon});
 
   @override
   Widget build(BuildContext context) {

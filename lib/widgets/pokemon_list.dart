@@ -25,17 +25,17 @@ class _PokemonListState extends State<PokemonList> {
       future: _pokeList,
       builder: (context, snapshot) {
         if (snapshot.hasData) {
-          List<PokeModel> _listem = snapshot.data!;
+          List<PokeModel> listem = snapshot.data!;
 
           return GridView.builder(
-              itemCount: _listem.length,
+              itemCount: listem.length,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount:
                       ScreenUtil().orientation == Orientation.portrait ? 2 : 3),
               itemBuilder: (context, index) {
                 debugPrint('item builder çalıştı');
                 return PoklistItem(
-                  pokemon: _listem[index],
+                  pokemon: listem[index],
                 );
               });
         } else if (snapshot.hasError) {

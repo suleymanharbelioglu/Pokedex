@@ -11,10 +11,10 @@ class AppTitle extends StatefulWidget {
 }
 
 class _AppTitleState extends State<AppTitle> {
-  String _pokeIconImageAdress = "images/pokeball.png";
+  final String _pokeIconImageAdress = "images/pokeball.png";
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       // color: Colors.grey,
       height: UIHelper.getAppTitleWidgetHeight(),
       child: Stack(

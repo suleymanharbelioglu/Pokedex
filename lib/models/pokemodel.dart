@@ -6,8 +6,10 @@
 
 import 'dart:convert';
 
+// ignore: non_constant_identifier_names
 PokeModel PokeModelFromJson(String str) => PokeModel.fromJson(json.decode(str));
 
+// ignore: non_constant_identifier_names
 String PokeModelToJson(PokeModel data) => json.encode(data.toJson());
 
 class PokeModel {

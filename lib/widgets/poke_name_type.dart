@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PokeNameType extends StatelessWidget {
   final PokeModel pokemon;
-  const PokeNameType({Key? key, required this.pokemon}) : super(key: key);
+  const PokeNameType({super.key, required this.pokemon});
 
   @override
   Widget build(BuildContext context) {

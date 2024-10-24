@@ -8,14 +8,14 @@ class PokeApi {
       "https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json";
 
   static Future<List<PokeModel>> getPokemonData() async {
-    List<PokeModel> _list = [];
+    List<PokeModel> list = [];
     var response = await Dio().get(_url);
     List pokeJsonList = jsonDecode(response.data)["pokemon"] as List;
-    _list = pokeJsonList
+    list = pokeJsonList
         .map(
           (e) => PokeModel.fromJson(e),
         )
         .toList();
-    return _list;
+    return list;
   }
 }

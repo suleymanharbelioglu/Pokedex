@@ -34,7 +34,10 @@ class PoklistItem extends StatelessWidget {
               Text(pokemon.name ?? 'N/A',
                   style: Constants.getPokemonNameTextStyle()),
               Chip(
-                label: Text(pokemon.type![0]),
+                label: Text(
+                  pokemon.type![0],
+                  style: Constants.getTypeChipTextStyle(),
+                ),
               ),
               Expanded(child: PokeImgAndBall(pokemon: pokemon)),
             ],

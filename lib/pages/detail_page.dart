@@ -9,7 +9,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class DetailPage extends StatelessWidget {
   final PokeModel pokemon;
 
-  const DetailPage({Key? key, required this.pokemon}) : super(key: key);
+  const DetailPage({super.key, required this.pokemon});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,8 @@ class DetailPage extends StatelessWidget {
             Padding(
               padding: UIHelper.getIconPadding(),
               child: IconButton(
-                  iconSize: 18.w,
+                  iconSize: 15.w,
+                  color: Colors.white,
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
@@ -82,8 +83,10 @@ class DetailPage extends StatelessWidget {
             Padding(
               padding: UIHelper.getIconPadding(),
               child: IconButton(
-                  iconSize: 18.w,
+                  iconSize: 24.w,
+                  color: Colors.white,
                   onPressed: () {
+                    debugPrint("navigator");
                     Navigator.of(context).pop();
                   },
                   icon: const Icon(Icons.arrow_back_ios)),
@@ -96,10 +99,10 @@ class DetailPage extends StatelessWidget {
                 child: Stack(
               children: [
                 Positioned(
-                  child: Image.asset(pokeballImageUrl,
-                      height: 0.15.sh, fit: BoxFit.fitHeight),
                   right: 0,
                   top: 0,
+                  child: Image.asset(pokeballImageUrl,
+                      height: 0.15.sh, fit: BoxFit.fitHeight),
                 ),
                 Positioned(
                   bottom: 0,

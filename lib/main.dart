@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         ),
         debugShowCheckedModeBanner: false,
         title: 'Pokemon List',
-        home: HomePage(),
+        home: const HomePage(),
       ),
     );
   }
