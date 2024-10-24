@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/constants/constants.dart';
+import 'package:flutter_application_1/constants/ui_helper.dart';
 import 'package:flutter_application_1/models/pokemodel.dart';
 import 'package:flutter_application_1/pages/detail_page.dart';
 import 'package:flutter_application_1/widgets/poke_img_and_ball.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PoklistItem extends StatelessWidget {
   final PokeModel pokemon;
@@ -17,24 +20,22 @@ class PoklistItem extends StatelessWidget {
       },
       child: Card(
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(15.w),
         ),
         elevation: 3,
         shadowColor: Colors.white,
-        color: Colors.yellow,
+        color: UIHelper.getColorFromType(pokemon.type![0]),
         child: Padding(
-          padding: EdgeInsets.all(10),
+          padding: UIHelper.getDefaultPadding(),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                pokemon.name ?? 'N/A',
-                style: TextStyle(
-                  fontSize: 20,
-                ),
+              Text(pokemon.name ?? 'N/A',
+                  style: Constants.getPokemonNameTextStyle()),
+              Chip(
+                label: Text(pokemon.type![0]),
               ),
-              Chip(label: Text(pokemon.type![0])),
               Expanded(child: PokeImgAndBall(pokemon: pokemon)),
             ],
           ),

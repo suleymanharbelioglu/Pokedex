@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/constants/ui_helper.dart';
 import 'package:flutter_application_1/models/pokemodel.dart';
 
 class PokeImgAndBall extends StatelessWidget {
@@ -16,8 +17,8 @@ class PokeImgAndBall extends StatelessWidget {
           alignment: Alignment.bottomRight,
           child: Image.asset(
             pokeballImageUrl,
-            width: 85,
-            height: 85,
+            width: UIHelper.calculatePokeImgAndBallSize(),
+            height: UIHelper.calculatePokeImgAndBallSize(),
             fit: BoxFit.fitHeight,
           ),
         ),
@@ -28,11 +29,11 @@ class PokeImgAndBall extends StatelessWidget {
             child: CachedNetworkImage(
               imageUrl: pokemon.img ?? '',
               errorWidget: (context, url, error) => const Icon(Icons.ac_unit),
-              width: 85,
-              height: 85,
+              width: UIHelper.calculatePokeImgAndBallSize(),
+              height: UIHelper.calculatePokeImgAndBallSize(),
               fit: BoxFit.fitHeight,
               placeholder: (context, url) => CircularProgressIndicator(
-                color: Colors.white,
+                color: UIHelper.getColorFromType(pokemon.type![0]),
               ),
             ),
           ),

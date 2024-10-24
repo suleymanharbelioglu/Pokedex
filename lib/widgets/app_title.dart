@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants/constants.dart';
+import 'package:flutter_application_1/constants/ui_helper.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppTitle extends StatefulWidget {
   const AppTitle({super.key});
@@ -14,16 +16,16 @@ class _AppTitleState extends State<AppTitle> {
   Widget build(BuildContext context) {
     return Container(
       // color: Colors.grey,
-      height: 120,
+      height: UIHelper.getAppTitleWidgetHeight(),
       child: Stack(
         children: [
           Align(
             alignment: Alignment.centerLeft,
             child: Padding(
-              padding: EdgeInsets.all(10),
+              padding: UIHelper.getDefaultPadding(),
               child: Text(
-                Constants.appTitle,
-                style: Constants.appTitleTextStyle,
+                "Pokedex",
+                style: Constants.getTitleTextStyle(),
               ),
             ),
           ),
@@ -31,7 +33,9 @@ class _AppTitleState extends State<AppTitle> {
             alignment: Alignment.centerRight,
             child: Image.asset(
               _pokeIconImageAdress,
-              width: 150,
+              width: ScreenUtil().orientation == Orientation.portrait
+                  ? 0.2.sh
+                  : 0.2.sw,
               fit: BoxFit.fitWidth,
             ),
           ),

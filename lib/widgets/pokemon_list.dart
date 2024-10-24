@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/models/pokemodel.dart';
 import 'package:flutter_application_1/services/poke_api.dart';
 import 'package:flutter_application_1/widgets/poklist_item.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PokemonList extends StatefulWidget {
   const PokemonList({super.key});
@@ -28,8 +29,9 @@ class _PokemonListState extends State<PokemonList> {
 
           return GridView.builder(
               itemCount: _listem.length,
-              gridDelegate:
-                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount:
+                      ScreenUtil().orientation == Orientation.portrait ? 2 : 3),
               itemBuilder: (context, index) {
                 debugPrint('item builder çalıştı');
                 return PoklistItem(
