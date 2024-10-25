@@ -14,4 +14,4 @@
 - google_fonts 
 
 ## App Video 
-  Use the [link](https://youtube.com/shorts/4JaVUkqvw20) to access the application's youtube video.
+  Use the [link](https://youtu.be/zqsGDWQnOSo) to access the application's youtube video.
